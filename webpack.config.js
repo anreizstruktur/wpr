@@ -9,6 +9,7 @@ const PATHS = {
   build: path.join(__dirname, 'build')
 };
 
+process.env.BABEL_ENV = TARGET;
 
 const common = {
   entry: {
@@ -33,10 +34,10 @@ module: {
       include: PATHS.app
 },
 {
-  test: /\.jsx&/,
+  test: /\.jsx?$/,
   //Enable caching for imporved perofmance during development
   //It uses default OS diretory by devaualt. If you need something more custom, pass a path to it, I.E., babel?cacheDirectory=<path>
-  loaders:['babel?bacheDirecory'],
+  loaders: ['babel?cacheDirectory'],
   inclued: PATHS.app
 }
 ]
